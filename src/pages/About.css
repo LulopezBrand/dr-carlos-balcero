@@ -1,0 +1,93 @@
+.about-hero {
+  background-color: var(--color-bg-secondary);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-5) 0 var(--spacing-1);
+}
+
+.about-header {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.story-section {
+  padding: var(--spacing-5) 0;
+  background-color: var(--color-bg);
+}
+
+.story-grid {
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+.story-main-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(10, 25, 47, 0.08);
+  display: block;
+}
+
+.story-content h2 {
+  margin-bottom: var(--spacing-7);
+  font-weight: 400;
+}
+
+.story-content h3 {
+  font-family: var(--font-body);
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  margin: var(--spacing-1) 0 var(--spacing-7);
+  font-weight: 500;
+}
+
+.story-quote {
+  margin-top: var(--spacing-1);
+  padding: var(--spacing-1);
+  border-radius: var(--radius-card);
+  background-color: var(--color-bg-secondary);
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--color-text);
+  font-style: italic;
+  box-shadow: var(--shadow-mid);
+}
+
+.credentials-section {
+  background-color: var(--palette-1);
+  color: #ffffff;
+  padding: var(--spacing-5) 0;
+}
+
+.credentials-header h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: var(--spacing-3);
+  font-weight: 400;
+}
+
+.credential-card {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: var(--spacing-7);
+}
+
+.credential-card h3 {
+  color: var(--color-primary);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-body);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.credential-card p {
+  color: var(--palette-3);
+  opacity: 0.85;
+  font-size: 15px;
+  line-height: 22px;
+}

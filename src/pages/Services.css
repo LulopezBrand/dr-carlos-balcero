@@ -1,0 +1,137 @@
+/* Services Page - Adaptado a design.md */
+
+.services-hero {
+  background-color: var(--color-bg-secondary);
+  text-align: center;
+  padding: var(--spacing-5) 0 var(--spacing-1);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.services-header {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.services-list-section {
+  background-color: var(--color-bg);
+  padding: var(--spacing-5) 0;
+}
+
+.service-area {
+  display: grid;
+  gap: var(--spacing-1);
+  margin-bottom: var(--spacing-5);
+  align-items: center;
+}
+
+.service-area:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+  .service-area {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .service-area.reverse .service-area-info {
+    order: 2;
+  }
+  
+  .service-area.reverse .service-area-image {
+    order: 1;
+  }
+}
+
+.service-area-info h2 {
+  color: var(--color-text);
+  margin-bottom: var(--spacing-7);
+  font-weight: 400;
+}
+
+.service-area-info > p {
+  font-size: 18px;
+  margin-bottom: var(--spacing-1);
+  color: var(--color-text-secondary);
+  line-height: 26px;
+}
+
+.service-items {
+  list-style: none;
+}
+
+.service-items li {
+  margin-bottom: var(--spacing-7);
+  padding-left: 2rem;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text-secondary);
+}
+
+.service-items li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.service-items strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.service-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 14px 35px rgba(10, 25, 47, 0.08);
+  display: block;
+}
+
+.philosophy-section {
+  background-color: var(--palette-1);
+  color: #ffffff;
+  padding: var(--spacing-5) 0;
+}
+
+.philosophy-box {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.philosophy-box h2 {
+  color: #ffffff;
+  margin-bottom: var(--spacing-7);
+  font-weight: 400;
+}
+
+.philosophy-box p {
+  font-size: 18px;
+  color: var(--palette-3);
+  opacity: 0.9;
+  font-weight: 400;
+  line-height: 28px;
+  margin-bottom: var(--spacing-1);
+}
+
+.philosophy-box .btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+  padding: 10px 28px;
+}
+
+.philosophy-box .btn-primary:hover {
+  background-color: #ffffff;
+  color: var(--palette-1);
+}
