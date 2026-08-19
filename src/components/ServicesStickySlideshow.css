@@ -1,0 +1,184 @@
+/* Services Sticky Slideshow Section */
+
+.sticky-slideshow-container {
+  height: 500vh;
+  position: relative;
+  background-color: #ffffff;
+  color: var(--palette-1);
+}
+
+.sticky-slideshow-pinned {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 var(--spacing-4);
+}
+
+.sticky-slideshow-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+/* Global Header (Top Centered) */
+.slideshow-global-header {
+  text-align: center;
+  width: 100%;
+  transform: translateY(-30px); /* Sube los elementos del título */
+}
+
+.slideshow-global-kicker {
+  margin-bottom: 1.75rem; /* Mismo espaciado estandarizado */
+}
+
+.slideshow-global-kicker span {
+  font-family: var(--font-body);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--palette-1);
+  font-weight: 600;
+  border: 1px solid rgba(10, 25, 47, 0.15);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg); /* Contraste sutil */
+  display: inline-block;
+}
+
+.slideshow-global-title {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 4vw, 48px);
+  color: var(--palette-1);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.slideshow-global-title em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.slideshow-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  gap: 3.5rem; /* Espaciado lateral más amplio */
+  align-items: center;
+  width: 100%;
+}
+
+/* Left Col: Title & Counter */
+.slideshow-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slideshow-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(30px, 3.2vw, 42px);
+  line-height: 1.15;
+  color: var(--palette-1);
+  margin-bottom: var(--spacing-2);
+}
+
+.slideshow-counter {
+  font-family: var(--font-display);
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  color: var(--palette-1);
+}
+
+/* Center Col: Image Wrapper (40px más grande con proporción preservada) */
+.slideshow-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow-img-wrapper {
+  width: 100%;
+  max-width: 520px; /* +40px más grande */
+  height: 59vh;
+  min-height: 450px;
+  max-height: 600px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 18px 50px rgba(10, 25, 47, 0.12);
+}
+
+.slideshow-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Right Col: Description & CTA */
+.slideshow-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slideshow-right-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.slideshow-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: #4A5568;
+  max-width: 330px;
+}
+
+.slideshow-action {
+  display: flex;
+}
+
+.btn-slideshow-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--palette-1);
+  border: 1px solid var(--palette-1);
+  border-radius: var(--radius-pill);
+  padding: 11px 22px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 8px rgba(10, 25, 47, 0.04);
+}
+
+.btn-slideshow-outline:hover {
+  background-color: var(--palette-1);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(10, 25, 47, 0.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {\n  .sticky-slideshow-inner {\n    gap: 1.5rem;\n  }\n\n  .slideshow-grid {\n    grid-template-columns: 1fr;\n    grid-template-rows: auto 1fr auto;\n    gap: 1rem;\n    text-align: center;\n  }\n\n  .slideshow-left, .slideshow-right {\n    align-items: center;\n  }\n\n  .slideshow-desc {\n    max-width: 100%;\n    margin: 0 auto;\n  }\n\n  .slideshow-img-wrapper {\n    height: 38vh;\n    min-height: 260px;\n    margin: 0 auto;\n  }\n}\n

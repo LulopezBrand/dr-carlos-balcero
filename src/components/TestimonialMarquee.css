@@ -1,0 +1,155 @@
+/* Testimonial Marquee Section */
+.testimonial-section {
+  background-color: var(--palette-3);
+  overflow: hidden;
+  padding: 130px 0 140px 0;
+}
+
+.testimonial-title {
+  font-family: var(--font-body);
+  font-size: clamp(36px, 5vw, 64px);
+  color: var(--palette-1);
+  text-align: center;
+  margin-bottom: 4.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.testimonial-title em {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.5vw, 56px);
+  text-transform: none;
+  font-style: italic;
+  font-weight: 400;
+  display: block;
+}
+
+.marquee-wrapper {
+  display: flex;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  padding: 10px 0 25px 0;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  will-change: transform;
+  animation: smoothMarquee 48s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes smoothMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12px));
+  }
+}
+
+/* Review Card Styles */
+.review-card {
+  width: 380px;
+  background-color: #ffffff;
+  padding: 32px;
+  flex-shrink: 0;
+  border-radius: 16px; 
+  box-shadow: 0 6px 24px rgba(10, 25, 47, 0.05);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(10, 25, 47, 0.08);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.review-avatar {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+}
+
+.review-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%; 
+  display: block;
+}
+
+.review-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.review-meta h4 {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--palette-1);
+  margin: 0;
+  font-weight: 600;
+}
+
+.review-meta span {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #888888;
+}
+
+.review-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #eaeaea;
+  margin: 20px 0;
+}
+
+.review-text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555555;
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.review-stars {
+  display: flex;
+  gap: 4px;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    width: 300px;
+    padding: 24px;
+  }
+  
+  .review-text {
+    font-size: 14px;
+  }
+}
