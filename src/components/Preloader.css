@@ -1,0 +1,83 @@
+.preloader-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.preloader-exit {
+  animation: slideUpBlind 0.8s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes slideUpBlind {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.preloader-logo-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-logo-base {
+  position: absolute;
+  inset: 0;
+  background-image: url('/favicon.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+}
+
+.preloader-logo-fill {
+  position: absolute;
+  inset: 0;
+  background-image: url('/favicon.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: brightness(0) saturate(100%) invert(8%) sepia(26%) saturate(2250%) hue-rotate(182deg) brightness(96%) contrast(97%);
+  clip-path: inset(100% 0 0 0);
+  animation: fillLogoBottomToTop 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fillLogoBottomToTop {
+  0% {
+    clip-path: inset(100% 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.preloader-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--palette-1);
+  animation: fillProgressBar 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fillProgressBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

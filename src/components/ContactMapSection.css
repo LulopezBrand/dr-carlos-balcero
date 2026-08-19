@@ -1,0 +1,182 @@
+/* Contact Map Section */
+.contact-map-section {
+  background-color: var(--palette-2);
+  padding: 120px 0;
+  border-top: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-map-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.contact-map-kicker {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.contact-map-title {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 4.2vw, 52px);
+  color: var(--palette-1);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.contact-map-title em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+.contact-map-subtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.contact-map-wrapper {
+  position: relative;
+  height: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(10, 25, 47, 0.08);
+}
+
+.map-iframe-container {
+  width: 100%;
+  height: 100%;
+}
+
+.map-iframe-container iframe {
+  filter: contrast(1.02) saturate(0.95);
+}
+
+/* Card Flotante */
+.contact-map-card {
+  position: absolute;
+  top: 32px;
+  left: 32px;
+  width: 360px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 12px 35px rgba(10, 25, 47, 0.15);
+  border: 1px solid rgba(10, 25, 47, 0.08);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.map-card-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  background: rgba(189, 174, 155, 0.2);
+  border: 1px solid rgba(189, 174, 155, 0.4);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--palette-1);
+  font-weight: 600;
+}
+
+.map-card-heading {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--palette-1);
+  margin: 0;
+  font-weight: 500;
+}
+
+.map-card-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.map-card-icon {
+  color: var(--color-primary);
+  min-width: 18px;
+  margin-top: 3px;
+}
+
+.map-card-item strong {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--palette-1);
+  margin-bottom: 2px;
+}
+
+.map-card-item p {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.map-card-action {
+  margin-top: 0.5rem;
+}
+
+.btn-map-directions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: var(--palette-1);
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-map-directions:hover {
+  background-color: var(--color-primary);
+  color: var(--palette-1);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .contact-map-wrapper {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map-iframe-container {
+    height: 320px;
+  }
+
+  .contact-map-card {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    box-shadow: none;
+  }
+}
