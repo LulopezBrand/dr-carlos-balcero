@@ -1,0 +1,189 @@
+/* Process Steps Section */
+
+.process-section-wrapper {
+  position: relative;
+  height: 300vh; /* Permite scroll para las 3 etapas */
+  background-color: #ffffff;
+}
+
+.process-sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 var(--spacing-4);
+}
+
+/* Encabezado */
+.process-header {
+  text-align: center;
+  margin-bottom: 3.6rem; /* +20px adicionales de separación */
+  max-width: 700px;
+  width: 100%;
+}
+
+.process-kicker {
+  margin-bottom: 1.75rem; /* Mismo espacio generoso que en Experiencia & Criterio */
+}
+
+.process-kicker span {
+  font-family: var(--font-body);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-text);
+  font-weight: 600;
+  border: 1px solid rgba(10, 25, 47, 0.15);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-bg); /* Contraste sutil sobre fondo blanco */
+}
+
+.process-title {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 4vw, 48px);
+  color: var(--palette-1);
+  font-weight: 400;
+  margin-bottom: var(--spacing-2);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.process-title em {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.process-subtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Layout Principal */
+.process-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-6);
+  max-width: 1100px;
+  width: 100%;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .process-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+}
+
+/* Columna Izquierda: Imagen */
+.process-image-col {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 4.5;
+  border-radius: 16px;
+  background-color: var(--color-bg-secondary);
+  box-shadow: 0 15px 35px rgba(10, 25, 47, 0.05);
+}
+
+.process-image-box {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.process-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Columna Derecha: Pasos */
+.process-steps-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.process-step-item {
+  display: flex;
+  gap: var(--spacing-3);
+  opacity: 0.35;
+  transform: translateX(15px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.process-step-item.is-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.step-number {
+  font-family: var(--font-display);
+  font-size: 64px;
+  color: rgba(10, 25, 47, 0.15);
+  font-weight: 400;
+  line-height: 0.85;
+  min-width: 75px;
+  text-align: right;
+  padding-right: 0;
+  transform: translateX(40px); /* +10px a la derecha */
+  transition: color 0.5s ease;
+}
+
+.process-step-item.is-active .step-number {
+  color: var(--palette-4); /* #bdae9b */
+}
+
+.step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 2px;
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 26px;
+  color: var(--palette-1);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.step-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .process-image-col {
+    aspect-ratio: 16 / 9;
+  }
+  .process-step-item {
+    gap: 16px;
+  }
+  .step-number {
+    font-size: 32px;
+    min-width: 45px;
+  }
+  .process-header {
+    margin-bottom: var(--spacing-3);
+  }
+  .process-sticky-container {
+    justify-content: flex-start;
+    padding-top: 100px;
+  }
+}

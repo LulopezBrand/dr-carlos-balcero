@@ -1,0 +1,268 @@
+/* Doctor Profile Section - Inspirado en el Layout Editorial del Dr. David Shafer */
+
+.profile-section {
+  position: relative;
+  min-height: 85vh;
+  min-height: 85dvh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--palette-1); /* #0A192F */
+  color: #ffffff;
+  padding: var(--spacing-5) 0;
+}
+
+/* Background Image Layer */
+.profile-bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('/images/perfil-fondo.jpg');
+  background-position: left center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Overlay Layer: Deja visible la imagen a la izquierda y oscurece a la derecha para legibilidad perfecta */
+.profile-overlay-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 25, 47, 0.15) 0%,
+    rgba(10, 25, 47, 0.45) 35%,
+    rgba(10, 25, 47, 0.88) 52%,
+    rgba(10, 25, 47, 0.98) 70%,
+    #0A192F 100%
+  );
+  pointer-events: none;
+}
+
+.profile-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-1);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .profile-grid {
+    grid-template-columns: 1.05fr 1fr; /* Columna izquierda limpia + Columna derecha contenido */
+    gap: var(--spacing-3);
+  }
+}
+
+/* Columna Izquierda: Espacio abierto para el Dr. Carlos Balcero */
+.profile-left-col {
+  min-height: 250px;
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .profile-left-col {
+    display: none; /* En móvil el fondo cubre completo */
+  }
+}
+
+/* Columna Derecha: Contenido Biográfico */
+.profile-right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 620px;
+}
+
+/* Título Editorial: Conoce al Dr. Carlos Balcero */
+.profile-title {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 4.2vw, 50px);
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: var(--spacing-6);
+  letter-spacing: normal;
+}
+
+.profile-title em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  color: #ffffff;
+  display: inline-block;
+  margin-left: 0.18em;
+}
+
+/* Subtítulo Kicker */
+.profile-kicker {
+  font-family: var(--font-body);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary); /* #d4af37 */
+  font-weight: 500;
+  margin-bottom: var(--spacing-7);
+}
+
+/* Biografía */
+.profile-bio-text {
+  margin-bottom: var(--spacing-1);
+}
+
+.profile-bio-text p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 25px;
+  color: var(--palette-3); /* #F5F2EB */
+  opacity: 0.92;
+  margin-bottom: 14px;
+}
+
+.profile-bio-text strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Credenciales e Instituciones (3 sellos de autoridad) */
+.profile-credentials-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: var(--spacing-7) 0;
+  margin-bottom: var(--spacing-1);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.profile-cred-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.cred-icon-wrap {
+  color: var(--color-primary); /* #d4af37 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cred-text strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.cred-text span {
+  display: block;
+  font-size: 11px;
+  line-height: 14px;
+  color: var(--palette-3);
+  opacity: 0.75;
+}
+
+/* Fila de Botones / Acciones */
+.profile-actions-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-7);
+  flex-wrap: wrap;
+}
+
+/* Botón Cápsula Primario (Blanco / Claro) */
+.btn-profile-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  color: var(--palette-1); /* #0A192F */
+  border-radius: var(--radius-pill);
+  padding: 11px 26px;
+  font-size: 15px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-profile-primary:hover {
+  background-color: var(--color-primary); /* #C89B4E */
+  color: #0A192F;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(200, 155, 78, 0.25);
+}
+
+/* Botón Multimedia con Ícono Play */
+.btn-profile-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-base);
+}
+
+.profile-play-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2px;
+  transition: all var(--transition-base);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-profile-video:hover {
+  color: var(--color-primary);
+}
+
+.btn-profile-video:hover .profile-play-circle {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.08);
+}
+
+.btn-profile-video:hover .profile-play-circle svg {
+  fill: #0A192F;
+}
+
+/* Ajustes Responsivos */
+@media (max-width: 768px) {
+  .profile-section {
+    padding: var(--spacing-3) 0;
+  }
+
+  .profile-overlay-layer {
+    background: linear-gradient(
+      180deg,
+      rgba(10, 25, 47, 0.7) 0%,
+      rgba(10, 25, 47, 0.95) 40%,
+      #0A192F 100%
+    );
+  }
+
+  .profile-credentials-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
